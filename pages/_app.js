@@ -25,7 +25,6 @@ function MyApp({ Component, pageProps }) {
 
   const listHandler = async (year, country) => {
     await setList(await fetchData(year, country));
-    console.log('list set');
   };
 
 

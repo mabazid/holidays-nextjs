@@ -43,7 +43,7 @@ const HolidayList = () => {
               { day.date }
             </Typography>
             <Typography variant="h6" color="text.secondary">
-              { day.localName }
+              { day.name }
             </Typography>
           </CardContent>
           <CardActions>
