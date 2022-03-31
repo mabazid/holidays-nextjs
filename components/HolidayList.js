@@ -6,16 +6,17 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import * as React from 'react';
-import { useContext, useEffect, useState } from 'react';
-import AppContext from '../store/AppContext';
+// import { useContext, useEffect, useState } from 'react';
+// import AppContext from '../store/AppContext';
 
-const HolidayList = () => {
-  const state = useContext(AppContext);
-  const [holidayList, setHolidayList] = useState(state.holidayList);
-
-  useEffect(() => {
-    setHolidayList(state.holidayList);
-  }, [state.holidayList]);
+const HolidayList = (props) => {
+  console.log(props.list.response);
+  // const state = useContext(AppContext);
+  // const [holidayList, setHolidayList] = useState(state.holidayList);
+  //
+  // useEffect(() => {
+  //   setHolidayList(state.holidayList);
+  // }, [state.holidayList]);
 
   return (
     <Box
@@ -27,7 +28,7 @@ const HolidayList = () => {
         alignItems: 'center',
       } }
     >
-      { holidayList.map((day) => (
+      { props.list.response.map((day) => (
         <Card
           sx={ {
             width: '300px',

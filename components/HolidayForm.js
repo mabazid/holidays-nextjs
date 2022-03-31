@@ -2,8 +2,7 @@ import { FormControl, MenuItem, Paper, Select } from '@mui/material';
 import Button from '@mui/material/Button';
 import { useRouter } from 'next/router';
 import * as React from 'react';
-import { useContext, useState } from 'react';
-import AppContext from '../store/AppContext';
+import { useState } from 'react';
 import Countries from './options/countries';
 
 
@@ -20,7 +19,6 @@ const years = [
 
 const HolidayForm = () => {
   const router = useRouter();
-  const state = useContext(AppContext);
   const [year, setYear] = useState(2022);
   const [country, setCountry] = useState('Germany');
   const [code, setCode] = useState('DE');
@@ -37,8 +35,7 @@ const HolidayForm = () => {
   const submitHandler = async (event) => {
     event.preventDefault();
 
-    await state.setHolidayList(year, code);
-    await router.push('/holidays');
+    await router.push(`/${ year }-${ code }`);
   };
 
   return (
@@ -49,9 +46,9 @@ const HolidayForm = () => {
       pr: '25px',
       ml: '35%',
       mt: '10%',
-      '@media(minWidth: 780px)' : {
-        width: '80%'
-      }
+      '@media(minWidth: 780px)': {
+        width: '80%',
+      },
     } }
     >
       <form onSubmit={ submitHandler }>
