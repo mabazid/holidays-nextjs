@@ -44,10 +44,14 @@ const HolidayForm = () => {
   return (
     <Paper sx={ {
       width: '20%',
+      minWidth: '420px',
       pl: '25px',
       pr: '25px',
-      ml: '40%',
+      ml: '35%',
       mt: '10%',
+      '@media(minWidth: 780px)' : {
+        width: '80%'
+      }
     } }
     >
       <form onSubmit={ submitHandler }>
