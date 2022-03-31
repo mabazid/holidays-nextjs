@@ -1,7 +1,10 @@
-import '../styles/globals.css'
+import DenseAppBar from '../components/layout/header';
+import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (<DenseAppBar>
+    <Component { ...pageProps } />
+  </DenseAppBar>);
 }
 
-export default MyApp
+export default MyApp;
